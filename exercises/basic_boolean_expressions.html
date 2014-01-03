@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html data-require="math boolean">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Basic Boolean Expressions</title>
+    <script src="../khan-exercise.js"></script>
+    <style>
+    tt {
+        font-family: courier;
+    }
+
+    .expression {
+        display: inline-block;
+        padding-right: 4px;
+        text-align: right;
+        width: 46px;
+    }
+
+    .operator {
+        text-align: center;
+        width: 20px;
+    }
+
+    .unknown {
+        font-weight: bold;
+    }
+    </style>
+</head>
+<body>
+<div class="exercise">
+    <div class="vars">
+        <var id="CHOICES">[
+            'true',
+            'false'
+        ]</var>
+    </div>
+
+    <p class="question">What does the following expression evaluate to?</p>
+
+    <p class="solution"><var>SOLUTION</var></p>
+
+    <ul class="choices" data-category="true">
+        <li data-each="CHOICES as CHOICE"><var>CHOICE</var></li>
+    </ul>
+
+    <div class="problems">
+        <div id="and">
+            <div class="vars">
+                <var id="EXPRESSION">simpleBooleanExpression("&amp;&amp;")</var>
+                <var id="SOLUTION">eval(EXPRESSION)</var>
+            </div>
+
+            <tt><var>EXPRESSION</var></tt>
+
+            <div class="hints">
+                <p>Remember the four rules of the <tt>&amp;&amp;</tt> operator.</p>
+                <ul class="expression-list">
+                    <li>
+                        <tt class="expression">true</tt>
+                        <tt class="operator">&amp;&amp;</tt>
+                        <tt class="expression">true</tt>
+                        <tt>== <span data-if="EXPRESSION == 'true &amp;&amp; true'" class="unknown">???</span><span data-else>true</span></tt>
+                    </li>
+                    <li>
+                        <tt class="expression">true</tt>
+                        <tt class="operator">&amp;&amp;</tt>
+                        <tt class="expression">false</tt>
+                        <tt>== <span data-if="EXPRESSION == 'true &amp;&amp; false'" class="unknown">???</span><span data-else>false</span></tt>
+                    </li>
+                    <li>
+                        <tt class="expression">false</tt>
+                        <tt class="operator">&amp;&amp;</tt>
+                        <tt class="expression">true</tt>
+                        <tt>== <span data-if="EXPRESSION == 'false &amp;&amp; true'" class="unknown">???</span><span data-else>false</span></tt>
+                    </li>
+                    <li>
+                        <tt class="expression">false</tt>
+                        <tt class="operator">&amp;&amp;</tt>
+                        <tt class="expression">false</tt>
+                        <tt>== <span data-if="EXPRESSION == 'false &amp;&amp; false'" class="unknown">???</span><span data-else>false</span></tt>
+                    </li>
+                </ul>
+                <p>The <tt>&amp;&amp;</tt> operator is more strict than <tt>||</tt>. Both of the values need to be true for the expression to be true.</p>
+                <p><tt><var>EXPRESSION</var> == <var>SOLUTION</var></tt>
+            </div>
+        </div>
+
+        <div id="or">
+            <div class="vars">
+                <var id="EXPRESSION">simpleBooleanExpression("||")</var>
+                <var id="SOLUTION">eval(EXPRESSION)</var>
+            </div>
+
+            <tt><var>EXPRESSION</var></tt>
+
+            <div class="hints">
+                <p>Remember the four rules of the <tt>||</tt> operator.</p>
+                <ul class="expression-list">
+                    <li>
+                        <tt class="expression">true</tt>
+                        <tt class="operator">||</tt>
+                        <tt class="expression">true</tt>
+                        <tt>== <span data-if="EXPRESSION == 'true || true'" class="unknown">???</span><span data-else>true</span></tt>
+                    </li>
+                    <li>
+                        <tt class="expression">true</tt>
+                        <tt class="operator">||</tt>
+                        <tt class="expression">false</tt>
+                        <tt>== <span data-if="EXPRESSION == 'true || false'" class="unknown">???</span><span data-else>true</span></tt>
+                    </li>
+                    <li>
+                        <tt class="expression">false</tt>
+                        <tt class="operator">||</tt>
+                        <tt class="expression">true</tt>
+                        <tt>== <span data-if="EXPRESSION == 'false || true'" class="unknown">???</span><span data-else>true</span></tt>
+                    </li>
+                    <li>
+                        <tt class="expression">false</tt>
+                        <tt class="operator">||</tt>
+                        <tt class="expression">false</tt>
+                        <tt>== <span data-if="EXPRESSION == 'false || false'" class="unknown">???</span><span data-else>false</span></tt>
+                    </li>
+                </ul>
+                <p>The <tt>||</tt> operator is more forgiving than <tt>&amp;&amp;</tt>. Only one of the values needs to be true for the expression to be true.</p>
+                <p><tt><var>EXPRESSION</var> == <var>SOLUTION</var></tt>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

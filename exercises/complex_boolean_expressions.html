@@ -1,0 +1,73 @@
+<!DOCTYPE>
+<html data-require="math boolean">
+<head>
+    <meta http-equiv="Content-Type" value="text/html; charset=UTF-8">
+    <title>Complex Boolean Expressions</title>
+    <script src="../khan-exercise.js"></script>
+    <style>
+    tt {
+        font-family: courier;
+    }
+
+    .highlighted {
+        display: block;
+    }
+
+    #hintsarea section div {
+        border-bottom: 1px dotted #ddd;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+    }
+
+    #hintsarea section label {
+        display: inline-block;
+        font-weight: bold;
+        line-height: 1em;
+        padding: 3px 5px;
+        text-align: right;
+        width: 70px;
+    }
+    </style>
+</head>
+<body>
+<div class="exercise">
+    <div class="vars">
+        <var id="EXPRESSION">complexBooleanExpression(randRange(1, 2))</var>
+        <var id="SOLUTION">eval(EXPRESSION)</var>
+        <var id="HIGHLIGHTED">highlightExpression(EXPRESSION)</var>
+        <var id="SIMPLIFICATIONS">buildSimplificationList(EXPRESSION)</var>
+        <var id="CHOICES">[
+            'true',
+            'false'
+        ]</var>
+    </div>
+
+    <p class="question">What does the following expression evaluate to?</p>
+
+    <p class="solution"><var>SOLUTION</var></p>
+
+    <ul class="choices" data-category="true">
+        <li data-each="CHOICES as CHOICE"><var>CHOICE</var></li>
+    </ul>
+
+    <div class="problems">
+        <div>
+            <tt><var>EXPRESSION</var></tt>
+
+            <div class="hints">
+                <p>Approach the problem like a computer. Evaluate the expression from the inside out.</p>
+                <p><tt><var>HIGHLIGHTED</var></tt></p>
+                <p>Try simplifying the expression by evaluating the deepest sub expression first.</p>
+                <section data-each="SIMPLIFICATIONS as SIMPLIFICATION">
+                    <div>
+                        <tt class="highlighted"><label class="hint_green">this:</label> <var>SIMPLIFICATION.before</var></tt>
+                        <tt class="simplified"><label class="hint_blue">becomes:</label> <var>SIMPLIFICATION.after</var></tt>
+                    </div>
+                </section>
+                <p><tt><var>EXPRESSION</var> == <var>SOLUTION</var></tt></p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
